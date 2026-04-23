@@ -21,4 +21,6 @@ export const uploadWaifuImage = (id, file) => {
   }).then((r) => r.data);
 };
 
+//hello
+
 export default api;
