@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background: linear-gradient(135deg, #fff0f8 0%, #f5eeff 50%, #f0f8ff 100%);
+    background-attachment: fixed;
+    color: #4a1942;
+    font-family: 'Nunito', system-ui, sans-serif;
+    min-height: 100vh;
+  }
+
+  ::-webkit-scrollbar        { width: 8px; }
+  ::-webkit-scrollbar-track  { background: #fce7f3; }
+  ::-webkit-scrollbar-thumb  { background: #f9a8d4; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #f472b6; }
+}
+
+@layer components {
+  .card-kawaii {
+    @apply bg-white rounded-3xl border-2 border-pink-100 shadow-kawaii
+           transition-all duration-300;
+  }
+
+  .btn-kawaii {
+    @apply px-5 py-2.5 bg-gradient-to-r from-pink-400 to-fuchsia-400
+           hover:from-pink-500 hover:to-fuchsia-500
+           text-white font-bold rounded-full shadow-kawaii
+           transition-all duration-200 hover:shadow-kawaii-lg hover:-translate-y-0.5
+           active:translate-y-0 text-sm;
+  }
+
+  .btn-kawaii-outline {
+    @apply px-5 py-2.5 bg-white border-2 border-pink-300
+           hover:bg-pink-50 text-pink-500 font-bold rounded-full
+           transition-all duration-200 text-sm;
+  }
+
+  .badge-kawaii {
+    @apply text-xs px-3 py-1 rounded-full font-semibold border;
+  }
+
+  .input-kawaii {
+    @apply w-full bg-pink-50 border-2 border-pink-200 rounded-2xl
+           px-5 py-3 text-kawaii-text placeholder-pink-300
+           focus:outline-none focus:border-pink-400 focus:bg-white
+           transition-all duration-200 font-medium;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-pink-500 via-fuchsia-500 to-violet-500
+           bg-clip-text text-transparent;
+  }
+}
+
+/* Sakura floating petals */
+.sakura {
+  position: fixed;
+  top: -20px;
+  animation: fall linear infinite;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+  font-size: 1.2rem;
+}
+
+@keyframes fall {
+  to { transform: translateY(110vh) rotate(360deg); }
+}
