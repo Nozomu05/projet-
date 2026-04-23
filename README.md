@@ -36,7 +36,7 @@ cd waifu-library
 cp .env.example .env
 
 # 3. Lancer tous les services
-docker-compose up --build
+docker compose up --build
 
 # L'application est disponible sur http://localhost
 # L'API est disponible sur  http://localhost:3000
